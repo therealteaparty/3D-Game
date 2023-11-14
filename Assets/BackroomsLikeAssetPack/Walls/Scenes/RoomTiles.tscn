@@ -1,0 +1,111 @@
+[gd_scene load_steps=28 format=3 uid="uid://docnbunn4426v"]
+
+[ext_resource type="PackedScene" uid="uid://bfjy5lpupjks3" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Walls/wall_pillar_a.tscn" id="1_2mfkg"]
+[ext_resource type="PackedScene" uid="uid://pwibxt56mghx" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Debris/debri_floor_debris_4.tscn" id="2_vqjkx"]
+[ext_resource type="PackedScene" uid="uid://ssbj13te6esa" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Debris/debri_wall_debris_4.tscn" id="3_lm43o"]
+[ext_resource type="PackedScene" uid="uid://c5upilxl6rpcq" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Debris/debri_floor_debris_3.tscn" id="4_tltjh"]
+[ext_resource type="PackedScene" uid="uid://bmpbpi7ajgr6" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Debris/debri_wall_debris_3.tscn" id="5_maavd"]
+[ext_resource type="PackedScene" uid="uid://bfdsa1tgoxa5e" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Debris/debri_floor_debris_2.tscn" id="6_0xogw"]
+[ext_resource type="PackedScene" uid="uid://1di0ywk05ws8" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Debris/debri_wall_debris_2.tscn" id="7_fm70d"]
+[ext_resource type="PackedScene" uid="uid://cm1bghp8rt1ob" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Debris/debri_floor_debris_1.tscn" id="8_xs7wr"]
+[ext_resource type="PackedScene" uid="uid://cadg0ajk3k75k" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Debris/debri_wall_debris_1.tscn" id="9_idoop"]
+[ext_resource type="PackedScene" uid="uid://c5vcu720s528r" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Walls/wall_pillar_b.tscn" id="10_l840k"]
+[ext_resource type="PackedScene" uid="uid://7tvmhvom6v1f" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Debris/debri_debris_stack_1.tscn" id="11_iu6tf"]
+[ext_resource type="PackedScene" uid="uid://beotpja5g0nhg" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Debris/debri_debris_stack_2.tscn" id="12_n833j"]
+[ext_resource type="PackedScene" uid="uid://deqqja0vwb30a" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Debris/debri_debris_stack_3.tscn" id="13_mxfk6"]
+[ext_resource type="PackedScene" uid="uid://bblhy2kei24hn" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Walls/wall_window.tscn" id="16_gu8jp"]
+[ext_resource type="PackedScene" uid="uid://d2pce4ue3gajh" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Walls/wall.tscn" id="17_htc8n"]
+[ext_resource type="PackedScene" uid="uid://vi0fxxj53agl" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Walls/wall_2m.tscn" id="18_ba5tt"]
+[ext_resource type="PackedScene" uid="uid://c7rq4dit7r6u2" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Walls/wall_door_a.tscn" id="20_rt1xg"]
+[ext_resource type="PackedScene" uid="uid://bmnd5fh3aueey" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Walls/wall_2m_door_a.tscn" id="21_uya6x"]
+[ext_resource type="PackedScene" uid="uid://cw6876y153x20" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Walls/wall_2m_window.tscn" id="22_p07n4"]
+[ext_resource type="PackedScene" uid="uid://fon8rk452hlg" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Walls/wall_door_snapper.tscn" id="22_pd3tj"]
+[ext_resource type="PackedScene" uid="uid://e828ek7jk5bw" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Walls/wall_door_b.tscn" id="23_6m6qj"]
+[ext_resource type="PackedScene" uid="uid://jeheqfnwrbws" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Walls/wall_2m_door_b.tscn" id="24_axfnx"]
+[ext_resource type="PackedScene" uid="uid://hgks0mhbbvmy" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Walls/wall_hole_b.tscn" id="25_tbvkn"]
+[ext_resource type="PackedScene" uid="uid://cc48nrviihm47" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Walls/wall_hole_2m_b.tscn" id="26_tgj4r"]
+[ext_resource type="PackedScene" uid="uid://mbvala68isjj" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Walls/wall_hole_a.tscn" id="27_2bpyx"]
+[ext_resource type="PackedScene" uid="uid://jelaoo2ui2c" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/tiles.tscn" id="27_wha01"]
+[ext_resource type="PackedScene" uid="uid://k363ps23lpsr" path="res://Assets/BackroomsLikeAssetPack/Walls/Scenes/Walls/wall_hole_2m_a.tscn" id="28_vp822"]
+
+[node name="RoomTiles" type="Node3D"]
+
+[node name="Wall_Pillar_A" parent="." instance=ExtResource("1_2mfkg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.7908, 0, -7.86354)
+
+[node name="Debri_FloorDebris_4" parent="." instance=ExtResource("2_vqjkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.7908, 0, -7.86354)
+
+[node name="Debri_WallDebris_4" parent="." instance=ExtResource("3_lm43o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.7908, 0, -7.86354)
+
+[node name="Debri_FloorDebris_3" parent="." instance=ExtResource("4_tltjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.7908, 0, -7.86354)
+
+[node name="Debri_WallDebris_3" parent="." instance=ExtResource("5_maavd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.2749, -12.7911, 4.43032)
+
+[node name="Debri_FloorDebris_2" parent="." instance=ExtResource("6_0xogw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.7908, 0, -7.86354)
+
+[node name="Debri_WallDebris_2" parent="." instance=ExtResource("7_fm70d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.7908, 0, -7.86354)
+
+[node name="Debri_FloorDebris_1" parent="." instance=ExtResource("8_xs7wr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.7908, 0, -7.86354)
+
+[node name="Debri_WallDebris_1" parent="." instance=ExtResource("9_idoop")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.7908, 0, -7.86354)
+
+[node name="Wall_Pillar_B" parent="." instance=ExtResource("10_l840k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.7908, 0, -7.86354)
+
+[node name="Debri_Debris_Stack_1" parent="." instance=ExtResource("11_iu6tf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.7908, 0, -7.86354)
+
+[node name="Debri_Debris_Stack_2" parent="." instance=ExtResource("12_n833j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.7908, 0, -7.86354)
+
+[node name="Debri_Debris_Stack_3" parent="." instance=ExtResource("13_mxfk6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.7908, 0, -7.86354)
+
+[node name="WallWindow" parent="." instance=ExtResource("16_gu8jp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8322, 0, -1.19586)
+
+[node name="Wall" parent="." instance=ExtResource("17_htc8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8322, 0, -1.19586)
+
+[node name="Wall_2m" parent="." instance=ExtResource("18_ba5tt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8322, 0, -1.19586)
+
+[node name="Wall_DoorSnapper" parent="." instance=ExtResource("22_pd3tj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8322, 0, -1.19586)
+
+[node name="WallDoor_A" parent="." instance=ExtResource("20_rt1xg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8322, 0, -1.19586)
+
+[node name="Wall_2m_Door_A" parent="." instance=ExtResource("21_uya6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8322, 0, -1.19586)
+
+[node name="Wall_2m_Window" parent="." instance=ExtResource("22_p07n4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8322, 0, -1.19586)
+
+[node name="WallDoor_B" parent="." instance=ExtResource("23_6m6qj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8322, 0, -1.19586)
+
+[node name="Wall_2m_Door_B" parent="." instance=ExtResource("24_axfnx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8322, 0, -1.19586)
+
+[node name="WallHole_B" parent="." instance=ExtResource("25_tbvkn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8322, 0, -1.19586)
+
+[node name="WallHole_2m_B" parent="." instance=ExtResource("26_tgj4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8322, 0, -1.19586)
+
+[node name="WallHole_A" parent="." instance=ExtResource("27_2bpyx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8322, 0, -1.19586)
+
+[node name="WallHole_2m_A" parent="." instance=ExtResource("28_vp822")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8322, 0, -1.19586)
+
+[node name="Tiles" parent="." instance=ExtResource("27_wha01")]
