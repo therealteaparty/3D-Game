@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://62yboafon2ax"]
+[gd_scene load_steps=5 format=3 uid="uid://62yboafon2ax"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_xnh0s"]
+[ext_resource type="PackedScene" uid="uid://baxju4dqq6how" path="res://Player/knife.tscn" id="2_w0l6c"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5nmy6"]
 
@@ -23,3 +24,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
 current = true
+
+[node name="knife - Copy" parent="." instance=ExtResource("2_w0l6c")]
+transform = Transform3D(0.297795, -0.19941, -0.177633, 0.0875114, 0.324239, -0.21728, 0.252309, 0.1229, 0.285019, 0.696133, 1.05621, -1.24122)

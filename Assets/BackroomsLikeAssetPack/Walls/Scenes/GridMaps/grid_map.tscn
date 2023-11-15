@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bk3u4c0yulso7"]
-
-[ext_resource type="MeshLibrary" uid="uid://bhrg67yb6jxf8" path="res://Assets/BackroomsLikeAssetPack/Walls/MeshLib/RoomTiles_3.tres" id="1_pk2er"]
-
-[node name="GridMap" type="GridMap"]
-mesh_library = ExtResource("1_pk2er")
-cell_size = Vector3(4, 4, 4)
