@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://62yboafon2ax"]
+[gd_scene load_steps=6 format=3 uid="uid://62yboafon2ax"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_xnh0s"]
 [ext_resource type="PackedScene" uid="uid://baxju4dqq6how" path="res://Player/knife.tscn" id="2_w0l6c"]
+[ext_resource type="PackedScene" uid="uid://d3da4kml1cslk" path="res://Assets/untitled.glb" id="3_j0pmc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5nmy6"]
 
@@ -27,3 +28,13 @@ current = true
 
 [node name="knife - Copy" parent="." instance=ExtResource("2_w0l6c")]
 transform = Transform3D(0.297795, -0.19941, -0.177633, 0.0875114, 0.324239, -0.21728, 0.252309, 0.1229, 0.285019, 0.696133, 1.05621, -1.24122)
+visible = false
+
+[node name="Flashlight" parent="." instance=ExtResource("3_j0pmc")]
+transform = Transform3D(-0.00206079, 0, -0.119982, 0, 0.12, 0, 0.119982, 0, -0.00206079, 1.36018, 1.18691, -1.06806)
+
+[node name="Light" type="SpotLight3D" parent="Flashlight"]
+transform = Transform3D(-0.0171732, 0, 0.999853, 0, 1, 0, -0.999853, 0, -0.0171732, -7.65936, -0.0489664, 0.0730114)
+light_color = Color(0.929412, 0.917647, 0, 1)
+light_energy = 3.0
+spot_angle = 25.7328

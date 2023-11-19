@@ -1,21 +1,20 @@
 [gd_scene load_steps=7 format=3 uid="uid://d2cchip1mpnyh"]
 
 [ext_resource type="PackedScene" uid="uid://62yboafon2ax" path="res://Player/player.tscn" id="1_gt61d"]
+[ext_resource type="MeshLibrary" uid="uid://usdhr7cnxyrk" path="res://Assets/BackroomsLikeAssetPack_Godot (1)/BackroomsLikeAssetPack/Walls/MeshLib/RoomTiles.tres" id="2_gxgde"]
 
 [sub_resource type="Environment" id="Environment_l83k1"]
 ambient_light_source = 3
 ambient_light_color = Color(0.615686, 0.858824, 0.964706, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hjre"]
-albedo_color = Color(0.305882, 0.643137, 1, 1)
+albedo_color = Color(1, 0.741176, 0.831373, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_e1wpr"]
 material = SubResource("StandardMaterial3D_1hjre")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e02w7"]
 size = Vector3(2, 0.1, 2)
-
-[sub_resource type="BoxMesh" id="BoxMesh_vpvie"]
 
 [node name="Game" type="Node3D"]
 
@@ -24,12 +23,15 @@ environment = SubResource("Environment_l83k1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.07895, 0)
+visible = false
 light_energy = 5.0
 directional_shadow_max_distance = 200.0
 
 [node name="Player" parent="." instance=ExtResource("1_gt61d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.156753, 0.757831, 2.71078)
 
 [node name="Ground" type="StaticBody3D" parent="."]
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
@@ -39,6 +41,8 @@ mesh = SubResource("PlaneMesh_e1wpr")
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, -1.5, 0)
 shape = SubResource("BoxShape3D_e02w7")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.47016, 0.514263, 0)
-mesh = SubResource("BoxMesh_vpvie")
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("2_gxgde")
+data = {
+"cells": PackedInt32Array(0, 0, 655436, 0, 65534, 77, 0, 65532, 19, 2, 65532, 20, 65534, 65532, 20, 4, 65532, 91, 65532, 65532, 1441883, 4, 65530, 1441820, 65530, 65532, 28, 4, 65534, 69, 4, 0, 5, 6, 65534, 7, 6, 0, 655429, 65532, 65530, 655452, 6, 2, 655452, 6, 4, 1441806, 4, 2, 1441869, 8, 2, 1441869, 4, 4, 1441869, 65534, 65530, 1441869, 65530, 65530, 1441869, 10, 2, 1441868, 2, 65530, 1441868, 0, 65530, 1441869, 2, 4, 1441869, 2, 2, 1441869, 65528, 65530, 655374, 65528, 65528, 655437, 65528, 65526, 1441820, 0, 2, 28, 0, 4, 28, 65532, 65528, 655432, 65532, 65526, 8, 65534, 65526, 1441800, 65534, 65528, 655368)
+}

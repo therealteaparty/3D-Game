@@ -28,6 +28,14 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+	
+	#Toggles flashlight ON/OFF	
+	if Input.is_action_just_pressed("flashlight") and $Flashlight.visible == true:
+			$Flashlight.visible = false
+	else:
+		if Input.is_action_just_pressed("flashlight") and $Flashlight.visible == false:
+			$Flashlight.visible = true
+		
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
