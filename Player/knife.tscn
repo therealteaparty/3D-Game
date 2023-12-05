@@ -1,5 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://baxju4dqq6how"]
+[gd_scene load_steps=7 format=3 uid="uid://baxju4dqq6how"]
 
 [ext_resource type="PackedScene" uid="uid://bbph8cd1qmh1l" path="res://Assets/knife - Copy.glb" id="1_ohlvd"]
+[ext_resource type="Script" path="res://Interactive/knife.gd" id="2_37bjg"]
+[ext_resource type="AudioStream" uid="uid://dhx87rwuy4bdc" path="res://Assets/Magical Glitter Sparkle - Sound Effect for editing.mp3" id="3_f17pa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mutsv"]
+albedo_color = Color(0.603922, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.415686, 0, 0.0313726, 1)
+emission_energy_multiplier = 2.1
+
+[sub_resource type="SphereMesh" id="SphereMesh_58lpu"]
+material = SubResource("StandardMaterial3D_mutsv")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q01uw"]
 
 [node name="knife - Copy" instance=ExtResource("1_ohlvd")]
+script = ExtResource("2_37bjg")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+speed_scale = 0.5
+mesh = SubResource("SphereMesh_58lpu")
+emission_shape = 1
+emission_sphere_radius = 0.3
+gravity = Vector3(0, 3, 0)
+scale_amount_min = 0.05
+scale_amount_max = 0.1
+
+[node name="Area3D" type="Area3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0)
+shape = SubResource("BoxShape3D_q01uw")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="3"]
+stream = ExtResource("3_f17pa")
+volume_db = 10.0
+autoplay = true
+max_distance = 1.0
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

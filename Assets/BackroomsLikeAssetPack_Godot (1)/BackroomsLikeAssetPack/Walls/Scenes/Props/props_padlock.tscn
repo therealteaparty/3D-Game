@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0mybc06yvbyx"]
+[gd_scene load_steps=11 format=3 uid="uid://d0mybc06yvbyx"]
 
-[ext_resource type="Material" uid="uid://xv6ew4o8fkg7" path="res://Assets/BackroomsLikeAssetPack/Walls/Material/PropSet_Mat.tres" id="1_7jvmf"]
+[ext_resource type="Material" uid="uid://xv6ew4o8fkg7" path="res://Assets/BackroomsLikeAssetPack_Godot (1)/BackroomsLikeAssetPack/Walls/Material/PropSet_Mat.tres" id="1_7jvmf"]
+[ext_resource type="Script" path="res://Interactive/props_padlock.gd" id="1_ttmpo"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xie78"]
 _surfaces = [{
@@ -69,17 +70,49 @@ shadow_mesh = SubResource("ArrayMesh_55c4j")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iow4u"]
 points = PackedVector3Array(-0.0354995, -0.0233498, 0.00742403, 0.0355047, 0.0265762, 0.00742294, 0.0355047, -0.0233547, 0.00742294, 0.00641631, 0.0256947, -0.012096, 0.0365342, -0.0240786, -0.00720495, -0.0354995, 0.0265714, 0.00742403, -0.0365289, -0.0240736, -0.00720607, 0.00212301, 0.0255991, 0.0124742, -0.0365289, 0.0272952, -0.00720607, 0.0365342, 0.0273002, -0.00720495, -0.00642441, -0.0224717, -0.0120953, -0.00213133, -0.0223761, 0.0124735, 0.018241, -0.022539, -0.0110544, -0.0182425, 0.0257603, -0.0110542, 0.021444, -0.022519, 0.0104001, -0.0214452, 0.02574, 0.0103998, 0.021444, 0.0257406, 0.0104001, -0.0214452, -0.0225184, 0.0103998, 0.018241, 0.0257606, -0.0110544, -0.0182425, -0.0225387, -0.0110542, 0.00641631, -0.0224731, -0.012096, -0.00642441, 0.0256933, -0.0120953, 0.0138963, -0.022444, 0.0114371, -0.0138918, 0.0256664, 0.0114375)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_pfbpa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w87rb"]
+albedo_color = Color(0.603922, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.415686, 0, 0.0313726, 1)
+emission_energy_multiplier = 2.1
+
+[sub_resource type="SphereMesh" id="SphereMesh_1mvmo"]
+material = SubResource("StandardMaterial3D_w87rb")
+
 [node name="Props_Padlock" type="RigidBody3D"]
 continuous_cd = true
+script = ExtResource("1_ttmpo")
 
 [node name="Props_Padlock_Lock" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00342607, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.00342607, 0)
 mesh = SubResource("ArrayMesh_pb25k")
 skeleton = NodePath("")
 
 [node name="Props_Padlock" type="MeshInstance3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 mesh = SubResource("ArrayMesh_cdpat")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_iow4u")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+shape = SubResource("BoxShape3D_pfbpa")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+speed_scale = 0.5
+mesh = SubResource("SphereMesh_1mvmo")
+emission_shape = 1
+emission_sphere_radius = 0.3
+gravity = Vector3(0, 3, 0)
+scale_amount_min = 0.0
+scale_amount_max = 0.05
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

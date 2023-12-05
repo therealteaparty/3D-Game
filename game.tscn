@@ -1,7 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2cchip1mpnyh"]
+[gd_scene load_steps=14 format=3 uid="uid://d2cchip1mpnyh"]
 
 [ext_resource type="PackedScene" uid="uid://62yboafon2ax" path="res://Player/player.tscn" id="1_gt61d"]
 [ext_resource type="MeshLibrary" uid="uid://usdhr7cnxyrk" path="res://Assets/BackroomsLikeAssetPack_Godot (1)/BackroomsLikeAssetPack/Walls/MeshLib/RoomTiles.tres" id="2_gxgde"]
+[ext_resource type="PackedScene" uid="uid://ci68ufigqp0c8" path="res://Interactive/tv_csg.tscn" id="3_babh3"]
+[ext_resource type="PackedScene" uid="uid://o8odkhwwsa44" path="res://UI/pause.tscn" id="4_7yqkc"]
+[ext_resource type="PackedScene" uid="uid://cislpt68ds34q" path="res://UI/hud.tscn" id="4_n6vgi"]
+[ext_resource type="PackedScene" uid="uid://bb3o4uqxgjhcf" path="res://Interactive/key.tscn" id="6_8jx0s"]
+[ext_resource type="PackedScene" uid="uid://d0mybc06yvbyx" path="res://Assets/BackroomsLikeAssetPack_Godot (1)/BackroomsLikeAssetPack/Walls/Scenes/Props/props_padlock.tscn" id="7_46xv2"]
+[ext_resource type="PackedScene" uid="uid://baxju4dqq6how" path="res://Player/knife.tscn" id="8_hf25s"]
+[ext_resource type="PackedScene" uid="uid://cglqbvyjlhc4o" path="res://Assets/BackroomsLikeAssetPack_Godot (1)/BackroomsLikeAssetPack/Walls/Scenes/Props/props_bucket.tscn" id="9_ae1pb"]
 
 [sub_resource type="Environment" id="Environment_l83k1"]
 ambient_light_source = 3
@@ -46,3 +53,26 @@ mesh_library = ExtResource("2_gxgde")
 data = {
 "cells": PackedInt32Array(0, 0, 655436, 0, 65534, 77, 0, 65532, 19, 2, 65532, 20, 65534, 65532, 20, 4, 65532, 91, 65532, 65532, 1441883, 4, 65530, 1441820, 65530, 65532, 28, 4, 65534, 69, 4, 0, 5, 6, 65534, 7, 6, 0, 655429, 65532, 65530, 655452, 6, 2, 655452, 6, 4, 1441806, 4, 2, 1441869, 8, 2, 1441869, 4, 4, 1441869, 65534, 65530, 1441869, 65530, 65530, 1441869, 10, 2, 1441868, 2, 65530, 1441868, 0, 65530, 1441869, 2, 4, 1441869, 2, 2, 1441869, 65528, 65530, 655374, 65528, 65528, 655437, 65528, 65526, 1441820, 0, 2, 28, 0, 4, 28, 65532, 65528, 655432, 65532, 65526, 8, 65534, 65526, 1441800, 65534, 65528, 655368)
 }
+
+[node name="UI" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="HUD" parent="UI" instance=ExtResource("4_n6vgi")]
+
+[node name="Pause" parent="UI" instance=ExtResource("4_7yqkc")]
+visible = false
+
+[node name="Clues" type="Node" parent="."]
+
+[node name="TV" parent="Clues" groups=["Clues"] instance=ExtResource("3_babh3")]
+
+[node name="Key" parent="Clues" instance=ExtResource("6_8jx0s")]
+
+[node name="Padlock" parent="Clues" groups=["Clues"] instance=ExtResource("7_46xv2")]
+transform = Transform3D(0.756835, 0, 0.653606, 0, 1, 0, -0.653606, 0, 0.756835, -10.1033, 1.24167, -8.08425)
+
+[node name="Knife" parent="Clues" groups=["Clues"] instance=ExtResource("8_hf25s")]
+transform = Transform3D(0.240551, 0, -0.179262, 0, 0.3, 0, 0.179262, 0, 0.240551, 10.1481, 1.18208, -7.85364)
+
+[node name="Bucket" parent="Clues" groups=["Clues"] instance=ExtResource("9_ae1pb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6444, 1.41269, -4.01234)

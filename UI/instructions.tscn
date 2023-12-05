@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://iiykt4m0q5bn"]
+
+[ext_resource type="Script" path="res://UI/Instructions.gd" id="1_kduhy"]
+[ext_resource type="Theme" uid="uid://bqxtn5tj5tg3q" path="res://UI/theme.tres" id="2_1w7t5"]
+
+[node name="Instructions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kduhy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1160.0
+offset_bottom = 656.0
+color = Color(0.14902, 0.14902, 0.14902, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 2.0
+offset_top = 48.0
+offset_right = 2.0
+offset_bottom = 94.0
+grow_horizontal = 2
+theme = ExtResource("2_1w7t5")
+text = "HOW TO PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 31.0
+offset_top = 164.0
+offset_right = 31.0
+offset_bottom = 450.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "1. Collect clues
+2. Toggle your flashlight with F
+3. Do not be seen"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 457.0
+offset_right = 814.0
+offset_bottom = 541.0
+theme = ExtResource("2_1w7t5")
+theme_override_font_sizes/font_size = 30
+text = "BACK"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://o8odkhwwsa44"]
+
+[ext_resource type="Theme" uid="uid://bqxtn5tj5tg3q" path="res://UI/theme.tres" id="1_60hxa"]
+[ext_resource type="Script" path="res://UI/pause.gd" id="1_832ia"]
+
+[node name="Pause" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_832ia")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1160.0
+offset_bottom = 655.0
+color = Color(0, 0, 0, 0.521569)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 56.0
+offset_right = 1154.0
+offset_bottom = 199.0
+theme = ExtResource("1_60hxa")
+theme_override_font_sizes/font_size = 70
+text = "PAUSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Restart" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 215.0
+offset_top = -36.0
+offset_right = -195.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_60hxa")
+theme_override_font_sizes/font_size = 40
+text = "RESTART"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 214.0
+offset_top = 86.0
+offset_right = -196.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_60hxa")
+theme_override_font_sizes/font_size = 40
+text = "Quit
+"
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

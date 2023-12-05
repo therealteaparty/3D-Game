@@ -1,0 +1,92 @@
+[gd_scene load_steps=14 format=3 uid="uid://ci68ufigqp0c8"]
+
+[ext_resource type="Texture2D" uid="uid://blqllon0fqcb4" path="res://Assets/New Piskel-1.png (20).png" id="1_6oo1g"]
+[ext_resource type="Script" path="res://Interactive/tv_csg.gd" id="1_08ru7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1r1oq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1tu5j"]
+albedo_color = Color(0.290196, 0.501961, 0.509804, 1)
+metallic = 0.79
+roughness = 0.53
+
+[sub_resource type="BoxMesh" id="BoxMesh_24iyo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqk5l"]
+albedo_color = Color(0.407843, 0.356863, 0.388235, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0a57h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qvvpo"]
+albedo_color = Color(0.0976563, 0.238281, 0.265625, 1)
+roughness = 0.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_tjk25"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uepti"]
+albedo_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_om3uj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qgev7"]
+albedo_texture = ExtResource("1_6oo1g")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_07b2o"]
+size = Vector3(1, 1, 0.75772)
+
+[node name="TV_CSG" type="CSGMesh3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.985569, 1.54898, -8.58969)
+mesh = SubResource("BoxMesh_1r1oq")
+material = SubResource("StandardMaterial3D_1tu5j")
+script = ExtResource("1_08ru7")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03694, 2.1634)
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.00434184, 0.0312603, 0.252188)
+operation = 2
+mesh = SubResource("BoxMesh_24iyo")
+material = SubResource("StandardMaterial3D_hqk5l")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.5, 0, 0, 0, 0.2, 0, 0.732884, 0.108979)
+mesh = SubResource("BoxMesh_0a57h")
+material = SubResource("StandardMaterial3D_qvvpo")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="."]
+transform = Transform3D(1.2, 0, 0, 0, 0.7, 0, 0, 0, 0.3, 0, 1.3374, 0.094553)
+mesh = SubResource("BoxMesh_tjk25")
+material = SubResource("StandardMaterial3D_uepti")
+
+[node name="CSGMesh3D5" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, -1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, 0, 1.34019, 0.251966)
+mesh = SubResource("PlaneMesh_om3uj")
+material = SubResource("StandardMaterial3D_qgev7")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.037171, 0.109571, 0.701785)
+
+[node name="Interact" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interact"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 1.18134)
+shape = SubResource("BoxShape3D_07b2o")
+
+[node name="Message" type="Label" parent="."]
+visible = false
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -297.0
+offset_right = 1.0
+offset_bottom = -140.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Unknown: Find the missing clues. Only then can you escape."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Interact" to="." method="_on_interact_body_entered"]
