@@ -10,10 +10,15 @@ Music made with GarageBand
 
 Additional Features:
 	1. Particles
+ 
 	2. Collectable objects
+ 
 	3. Original handheld object model, enemy model
+ 
 	4. OST
+ 
 	5. Limited resources (battery life)
+ 
 	6. Use of light (flashlight)
 	
 # What makes this a game
