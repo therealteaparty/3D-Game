@@ -9,6 +9,7 @@ Original enemy made with Blender
 Music made with GarageBand
 
 Additional Features:
+
 	1. Particles
  
 	2. Collectable objects
