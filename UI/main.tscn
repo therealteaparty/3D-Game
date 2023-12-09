@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c14ck65t1fvqr"]
+[gd_scene load_steps=5 format=3 uid="uid://c14ck65t1fvqr"]
 
 [ext_resource type="Texture2D" uid="uid://c520etwmkc6gh" path="res://Assets/background.png" id="1_eyigb"]
 [ext_resource type="Script" path="res://UI/main.gd" id="1_lhw65"]
 [ext_resource type="Theme" uid="uid://bqxtn5tj5tg3q" path="res://UI/theme.tres" id="3_s40ut"]
+[ext_resource type="AudioStream" uid="uid://benec04ovay2i" path="res://Assets/My Song 9.mp3" id="4_3u4hg"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -85,6 +86,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_s40ut")
 text = "how to play"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3u4hg")
+autoplay = true
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

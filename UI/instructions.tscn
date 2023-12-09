@@ -36,22 +36,28 @@ vertical_alignment = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 31.0
-offset_top = 164.0
-offset_right = 31.0
-offset_bottom = 450.0
+offset_left = 22.0
+offset_top = 121.0
+offset_right = 22.0
+offset_bottom = 643.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 50
-text = "1. Collect clues
-2. Toggle your flashlight with F
-3. Do not be seen"
+theme_override_font_sizes/font_size = 40
+text = "1. Collect all the clues to escape
+
+2. Do not let the tiny monster get to you
+
+3. The monster does not like light. Flash
+him if he gets too close.
+
+4. Toggle flashlight with F 
+    (Be careful! You have limited battery)"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 394.0
-offset_top = 457.0
-offset_right = 814.0
-offset_bottom = 541.0
+offset_left = 813.0
+offset_top = 332.0
+offset_right = 1119.0
+offset_bottom = 448.0
 theme = ExtResource("2_1w7t5")
 theme_override_font_sizes/font_size = 30
 text = "BACK"

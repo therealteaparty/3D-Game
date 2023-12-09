@@ -1,6 +1,7 @@
 extends Node
 
 var clues = 0
+var battery = 100
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -23,8 +24,12 @@ func add_clue():
 	var CLUES = get_node_or_null("/root/Game/UI/HUD/Clues")
 	if CLUES != null:
 		CLUES.text = "CLUES FOUND: " + str(clues) + " of 4"
+	if clues == 4:
+		get_tree().change_scene_to_file("res://UI/win.tscn")
 
-## Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _unhandled_input(event):
-#	if event.is_action_pressed("menu"):
-#		get_tree().quit()
+func dec_battery():
+	battery -= 20
+	var BATTERY = get_node_or_null("/root/Game/UI/HUD/Battery")
+	if BATTERY != null:
+		BATTERY.text = "BATTERY... " + str(battery) + " PERCENT"
+

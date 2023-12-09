@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://ci68ufigqp0c8"]
+[gd_scene load_steps=15 format=3 uid="uid://ci68ufigqp0c8"]
 
 [ext_resource type="Texture2D" uid="uid://blqllon0fqcb4" path="res://Assets/New Piskel-1.png (20).png" id="1_6oo1g"]
 [ext_resource type="Script" path="res://Interactive/tv_csg.gd" id="1_08ru7"]
+[ext_resource type="Theme" uid="uid://bqxtn5tj5tg3q" path="res://UI/theme.tres" id="3_5ibov"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1r1oq"]
 
@@ -55,12 +56,12 @@ mesh = SubResource("BoxMesh_0a57h")
 material = SubResource("StandardMaterial3D_qvvpo")
 
 [node name="CSGMesh3D4" type="CSGMesh3D" parent="."]
-transform = Transform3D(1.2, 0, 0, 0, 0.7, 0, 0, 0, 0.3, 0, 1.3374, 0.094553)
+transform = Transform3D(1.2, 0, 0, 0, 0.7, 0, 0, 0, 0.3, 0, 1.26205, 0.094553)
 mesh = SubResource("BoxMesh_tjk25")
 material = SubResource("StandardMaterial3D_uepti")
 
 [node name="CSGMesh3D5" type="CSGMesh3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, -1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, 0, 1.34019, 0.251966)
+transform = Transform3D(0.5, 0, 0, 0, -1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, 0, 1.26484, 0.251966)
 mesh = SubResource("PlaneMesh_om3uj")
 material = SubResource("StandardMaterial3D_qgev7")
 
@@ -73,20 +74,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.037171, 0.109571, 0.701785)
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 1.18134)
 shape = SubResource("BoxShape3D_07b2o")
 
-[node name="Message" type="Label" parent="."]
+[node name="Dialogue" type="Control" parent="."]
 visible = false
-anchors_preset = 14
-anchor_top = 0.5
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2.0
+offset_top = 577.0
+offset_right = 1155.0
+offset_bottom = 649.0
+
+[node name="ColorRect" type="ColorRect" parent="Dialogue"]
+layout_mode = 1
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 1.0
-offset_top = -297.0
-offset_right = 1.0
-offset_bottom = -140.0
+offset_left = -7.0
+offset_top = 14.0
+offset_right = 2.0
+offset_bottom = 76.0
 grow_horizontal = 2
-grow_vertical = 2
-text = "Unknown: Find the missing clues. Only then can you escape."
-horizontal_alignment = 1
-vertical_alignment = 1
+color = Color(0, 0, 0, 0.45098)
+
+[node name="Text" type="RichTextLabel" parent="Dialogue"]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 21.0
+offset_right = 1350.0
+offset_bottom = 82.0
+theme = ExtResource("3_5ibov")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "..."
 
 [connection signal="body_entered" from="Interact" to="." method="_on_interact_body_entered"]
+[connection signal="body_exited" from="Interact" to="." method="_on_interact_body_exited"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dej71tp8g8c7v"]
+
+[ext_resource type="Script" path="res://Player/monster.gd" id="1_cf1au"]
+[ext_resource type="PackedScene" uid="uid://bim4h7jay3spe" path="res://Player/monster_3d.tscn" id="2_g30gl"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rku08"]
+height = 3.28247
+
+[node name="Monster" type="CharacterBody3D"]
+script = ExtResource("1_cf1au")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.640166, 0.00604427)
+shape = SubResource("CapsuleShape3D_rku08")
+
+[node name="monster_3d" parent="." instance=ExtResource("2_g30gl")]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_height_offset = 1.0

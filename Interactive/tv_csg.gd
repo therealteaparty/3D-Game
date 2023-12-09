@@ -1,16 +1,14 @@
 extends CSGMesh3D
-	
 
 func _on_interact_body_entered(body):
-#	if Input.is_action_just_pressed("interact"):
-#		if $Message.visible == true:
-#			$Message.hide()
-#		else:
-#			$Message.show()
-#			await get_tree().create_timer(5).timeout
-#			$Message.hide()
-	pass
-			
-		
-		
+	if body.name == "Player":
+		$Dialogue.show()
+		var TEXT = get_node_or_null("/root/Game/Clues/TV/Dialogue")
+		if TEXT != null:
+			$Dialogue/Text.text = "Unknown: Uncover the truth"
+			await get_tree().create_timer(2).timeout
+			$Dialogue/Text.text = "Unknown:...Only then can you escape"
 
+func _on_interact_body_exited(body):
+	if body.name == "Player":
+		$Dialogue.hide()

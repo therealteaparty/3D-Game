@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://62yboafon2ax"]
+[gd_scene load_steps=6 format=3 uid="uid://62yboafon2ax"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_xnh0s"]
 [ext_resource type="PackedScene" uid="uid://d3da4kml1cslk" path="res://Assets/untitled.glb" id="3_j0pmc"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_erplo"]
 size = Vector3(0.8, 0.2, 0.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cs4v5"]
+size = Vector3(1.3, 1.77514, 1.3)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_xnh0s")
@@ -27,9 +30,18 @@ current = true
 
 [node name="Flashlight" parent="." instance=ExtResource("3_j0pmc")]
 transform = Transform3D(-0.00206079, 0, -0.119982, 0, 0.12, 0, 0.119982, 0, -0.00206079, 1.36018, 1.18691, -1.06806)
+visible = false
 
 [node name="Light" type="SpotLight3D" parent="Flashlight"]
 transform = Transform3D(-0.0171732, 0, 0.999853, 0, 1, 0, -0.999853, 0, -0.0171732, -7.65936, -0.0489664, 0.0730114)
 light_color = Color(0.929412, 0.917647, 0, 1)
 light_energy = 3.0
 spot_angle = 25.7328
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.68873, 0)
+shape = SubResource("BoxShape3D_cs4v5")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
